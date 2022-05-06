@@ -51,4 +51,16 @@ int deleteProduct(Product *s){
         s->price = -1;
         return 1;
 }
+int selectMenu(){
+        int menu;
+        printf("\n===제품===\n");
+        printf("1. 제품조회\n");
+        printf("2. 제품추가\n");
+        printf("3. 제품수정\n");
+        printf("4. 제품삭제\n");
+        printf("0. 종료\n");
+        printf("=> 원하는 메뉴는? \n");
+        scanf("%d",&menu);
+        return menu;
+}
 

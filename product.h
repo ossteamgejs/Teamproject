@@ -7,10 +7,10 @@ typedef struct {
 	char date[20];
 	char weight[20];
 	int price;
-}product;
+}Product;
 
 int addProduct(Product *s);
-void readProduct(Product *s);
+void readProduct(Product s);
 int selectMenu();
 int updateProduct(Product *s);
 int deleteProduct(Product *s);

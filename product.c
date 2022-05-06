@@ -47,3 +47,8 @@ int updateProduct(Product *s){
     printf("=>수정됨!\n");
     return 1;
 }
+int deleteProduct(Product *s){
+        s->price = -1;
+        return 1;
+}
+

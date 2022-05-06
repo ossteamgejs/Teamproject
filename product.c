@@ -63,4 +63,33 @@ int selectMenu(){
         scanf("%d",&menu);
         return menu;
 }
+int main(void){
+    Product s;
+    int count=0,menu;
 
+    while(1){
+        menu=selectMenu();
+        if(menu==0)break;
+        if(menu==1){
+        if(count>0){
+            readProduct(s);
+        }
+        else{
+            printf("데이터가 없습니다!\n");
+        }
+        }
+        else if(menu==2){
+        count+=addProduct(&s);
+        }
+        else if(menu==3){
+            updateProduct(&s);
+        }
+        else if(menu==4){
+            if(deleteProduct(&s)){
+             count--;
+         }
+        }
+     }
+    printf("종료됨!\n");
+    return 0;
+}

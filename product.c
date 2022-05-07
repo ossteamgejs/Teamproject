@@ -37,7 +37,7 @@ int updateProduct(Product *s){
     scanf("%[^\n]s", s->explain);
     printf("무게는?: ");
     scanf("%s",s->weight);
-    printf("유통기한은?(ex:04.29): ");
+    printf("유통기한은?(ex:2022/04/29): ");
     scanf("%s",s->date);
     printf("제품 카테고리?: ");
     getchar();
@@ -88,6 +88,7 @@ int main(void){
             if(deleteProduct(&s)){
              count--;
          }
+	printf("=>삭제됨!\n");
         }
      }
     printf("종료됨!\n");

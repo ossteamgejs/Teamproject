@@ -9,8 +9,8 @@ typedef struct {
 	int price;
 }Product;
 
-int addProduct(Product *s);
-void readProduct(Product s);
+int addProduct(Product *s);//제품추가함수
+void readProduct(Product s);//제품조회함수
 int selectMenu();
-int updateProduct(Product *s);
-int deleteProduct(Product *s);
+int updateProduct(Product *s);//제품수정함수
+int deleteProduct(Product *s);//제품삭제함수

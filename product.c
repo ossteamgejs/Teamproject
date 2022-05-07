@@ -19,6 +19,7 @@ int addProduct(Product *s){
     printf("=>추가됨!\n");
     return 1;
 }
+
 void readProduct(Product s){
     if(s.price==-1) return;
     printf("제품명: %s\n",s.name);

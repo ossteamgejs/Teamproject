@@ -28,6 +28,7 @@ void readProduct(Product s){
     printf("카테고리: %s\n",s.category);
     printf("제품 가격: %d\n",s.price); 
 }
+
 int updateProduct(Product *s){
     printf("제품명은?: ");
     getchar();

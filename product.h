@@ -11,6 +11,6 @@ typedef struct {
 
 int addProduct(Product *s);//제품추가함수
 void readProduct(Product s);//제품조회함수
-int selectMenu();
+int selectMenu();//메뉴선택함수
 int updateProduct(Product *s);//제품수정함수
 int deleteProduct(Product *s);//제품삭제함수

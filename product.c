@@ -7,7 +7,7 @@ int addProduct(Product *s){
     printf("제품 설명은?: ");
     getchar();
     scanf("%[^\n]s", s->explain);
-    printf("무게는?: ");
+    printf("무게는?(ex:ml,kg): ");
     scanf("%s",s->weight);
     printf("유통기한은?(ex:2022/04/29): ");
     scanf("%s",s->date);

@@ -7,7 +7,7 @@ int addProduct(Product *s){
     printf("제품 설명은?: ");
     getchar();
     scanf("%[^\n]s", s->explain);
-    printf("무게는?(ex:50ml,1kg): ");
+    printf("중량은?(ex:50ml,1kg): ");
     scanf("%s",s->weight);
     printf("유통기한은?(ex:2022/04/29): ");
     scanf("%s",s->date);
@@ -24,7 +24,7 @@ void readProduct(Product s){
     if(s.price==-1) return;
     printf("제품명: %s\n",s.name);
     printf("제품 설명: %s\n",s.explain);
-    printf("제품 무게: %s\n",s.weight);
+    printf("제품 중량: %s\n",s.weight);
     printf("유통기한 :%s\n",s.date);
     printf("카테고리: %s\n",s.category);
     printf("제품 가격: %d\n",s.price); 
@@ -37,7 +37,7 @@ int updateProduct(Product *s){
     printf("제품 설명은?: ");
     getchar();
     scanf("%[^\n]s", s->explain);
-    printf("무게는?(ex:50ml,1kg): ");
+    printf("중량은?(ex:50ml,1kg): ");
     scanf("%s",s->weight);
     printf("유통기한은?(ex:2022/04/29): ");
     scanf("%s",s->date);

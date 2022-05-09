@@ -27,7 +27,7 @@ void readProduct(Product s){
     printf("제품 중량: %s\n",s.weight);
     printf("유통기한 :%s\n",s.date);
     printf("카테고리: %s\n",s.category);
-    printf("제품 가격: %d\n",s.price); 
+    printf("제품 가격: %d원\n",s.price); 
 }
 
 int updateProduct(Product *s){

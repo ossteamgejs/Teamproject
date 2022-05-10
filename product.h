@@ -16,4 +16,8 @@ int updateProduct(Product *s);//제품수정함수
 int deleteProduct(Product *s);//제품삭제함수
 void saveData(Product *s, int count);
 int loadData(Product *s);
+void searchName(Product *s, int count);
+void searchPrice(Product *s, int count);
+void searchWeight(Product *s, int count);
+void searchCategoty(Product *s, int count);
 

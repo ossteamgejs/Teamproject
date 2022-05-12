@@ -108,7 +108,25 @@ void searchWeight(Product *s, int count){
         }
         if(scnt==0) printf("=>검색 결과가 없음\n");
 }
+void searchCategory(Product *s, int count){
+	int scnt=0;
+	char search[30];
 
+	printf("검색할 카테고리는? ");
+	getchar();
+	scanf("[^\n]s",search);
+
+	for(int i=0; i<count; i++) {
+		if(s[i].price==-1) continue;
+		if(strstr(s[i].category,search)){
+			printf("===========================================\n");
+			printf("%d번\n",i+1);
+			readProduct(s[i]);
+			scnt++;
+		}
+	}
+	if(scnt==0) printf("=>검색 결과가 없음\n");
+}
 int selectMenu(){
         int menu;
         printf("\n===제품===\n");

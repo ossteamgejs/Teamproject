@@ -20,5 +20,5 @@ int selectNumber(Product *s, int count);
 void searchName(Product *s, int count);
 void searchPrice(Product *s, int count);
 void searchWeight(Product *s, int count);
-void searchCategoty(Product *s, int count);
+void searchCategory(Product *s, int count);
 

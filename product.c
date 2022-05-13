@@ -1,4 +1,5 @@
 #include "product.h"
+#include <string.h>
 
 int addProduct(Product *s){
     printf("제품명은?: ");
@@ -55,7 +56,7 @@ int deleteProduct(Product *s){
 }
 void listProduct(Product *s, int count){
 	for(int i=0;i<count;i++){
-	if(s[i].price==-1 && s[i].method==-1) continue;
+	if(s[i].price==-1) continue;
        	printf("===============================================\n");
 	printf("%d번\n",i+1); readProduct(s[i]);
 	}
@@ -71,7 +72,7 @@ void saveData(Product *s,int count){
        	FILE *fp;
 	fp=fopen("product.txt","wt");
        	for(int i=0;i<count;i++){
-	if(s[i].name==-1) continue;
+	if(s[i].price==-1) continue;
 	fprintf(fp, "%s %s %s %s %s %d\n",s[i].name, s[i].explain, s[i].weight,
 	s[i].date,s[i].category,s[i].price);
    	 }
@@ -108,7 +109,7 @@ void searchName(Product *s, int count){
 
 	printf("원하는 제품은? ");
 	getchar();
-	scanf("[^\n]s",search);
+	scanf("%[^\n]s",search);
 
 	for(int i=0; i<count; i++) {
 		if(s[i].price==-1) continue;
@@ -141,10 +142,10 @@ void searchPrice(Product *s, int count){
 }
 void searchWeight(Product *s, int count){
         int scnt = 0;
-        int search[20];
+        char search[20];
 
         printf("검색할 중량은? ");
-        scanf("%d", &search);
+        scanf("%s", &search);
 
         for(int i=0; i <count; i++){
                 if(s[i].price == -1) continue;
@@ -163,7 +164,7 @@ void searchCategory(Product *s, int count){
 
 	printf("검색할 카테고리는? ");
 	getchar();
-	scanf("[^\n]s",search);
+	scanf("%[^\n]s",search);
 
 	for(int i=0; i<count; i++) {
 		if(s[i].price==-1) continue;
@@ -219,7 +220,7 @@ int main(void){
 		printf("=>추가됨!\n");
         }
         else if(menu==3){
-		int no = selectDataNo(slist, curcount);
+		int no = selectNumber(slist, curcount);
                         if(no == 0){
                                 printf("=>취소됨!\n");
                                 continue;
@@ -228,7 +229,7 @@ int main(void){
 
         }
         else if(menu==4){
-		int no = selectDataNo(slist,curcount);
+		int no = selectNumber(slist,curcount);
                         if(no == 0){
                                 printf("=>취소됨!\n");
                                 continue;
@@ -237,7 +238,7 @@ int main(void){
                         printf("삭제하시겠습니까?(삭제:1)");
                         scanf("%d",&del);
                         if (del == 1){
-                                if(deleteProduct(&psist[no-1])) count--;
+                                if(deleteProduct(&slist[no-1])) count--;
                                 printf("=> 삭제됨!\n");
         }
 	else if(menu==5){

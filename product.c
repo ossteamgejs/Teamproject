@@ -185,7 +185,10 @@ int selectMenu(){
         printf("4. 제품삭제\n");
 	printf("5. 파일저장\n");
 	printf("6. 제품이름 검색\n");
-        printf("0. 종료\n\n");
+        printf("7. 제품가격 검색\n");
+	printf("8. 제품중량 검색\n");
+	printf("9. 제품카테고리 검색\n");
+	printf("0. 종료\n\n");
         printf("=> 원하는 메뉴는?");
         scanf("%d",&menu);
         return menu;

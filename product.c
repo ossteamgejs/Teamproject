@@ -53,6 +53,19 @@ int deleteProduct(Product *s){
         s->price = -1;
         return 1;
 }
+
+void saveData(Product *s,int count){
+       	FILE *fp;
+	fp=fopen("product.txt","wt");
+       	for(int i=0;i<count;i++){
+	if(s[i].name==-1) continue;
+	fprintf(fp, "%s %s %s %s %s %d\n",s[i].name, s[i].explain, s[i].weight,
+	s[i].date,s[i].category,s[i].price);
+   	 }
+fclose(fp);
+printf("저장됨!\n");
+}
+
 void searchName(Product *s, int count){
 	int scnt=0;
 	char search[20];

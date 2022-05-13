@@ -240,7 +240,8 @@ int main(void){
                         if (del == 1){
                                 if(deleteProduct(&slist[no-1])) count--;
                                 printf("=> 삭제됨!\n");
-        }
+        		}
+	}
 	else if(menu==5){
 		saveData(slist, curcount);
 	}

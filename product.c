@@ -89,12 +89,12 @@ int loadData(Product *s){
         return 0;
     }else {
         for(; i < 20; i++){
-             fscanf(fp, "%s", s[i].name);
+             fscanf(fp, "%[^\n]s", s[i].name);
              if(feof(fp)) break;
-             fscanf(fp, "%s", s[i].explain);
-             fscanf(fp, "%s", s[i].weight);
-             fscanf(fp, "%s", s[i].date);
-             fscanf(fp, "%s", s[i].category);
+             fscanf(fp, "%[^\n]s", s[i].explain);
+             fscanf(fp, "%[^\n]s", s[i].weight);
+             fscanf(fp, "%[^\n]s", s[i].date);
+             fscanf(fp, "%[^\n]s", s[i].category);
              fscanf(fp, "%d", &s[i].price);
         }
         fclose(fp);
@@ -217,7 +217,6 @@ int main(void){
         }
         else if(menu==2){
         	count+=addProduct(&slist[curcount++]);
-		printf("=>추가됨!\n");
         }
         else if(menu==3){
 		int no = selectNumber(slist, curcount);

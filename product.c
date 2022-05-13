@@ -145,7 +145,7 @@ void searchWeight(Product *s, int count){
         char search[20];
 
         printf("검색할 중량은? ");
-        scanf("%s", &search);
+        scanf("%s", search);
 
         for(int i=0; i <count; i++){
                 if(s[i].price == -1) continue;

@@ -61,7 +61,12 @@ void listProduct(Product *s, int count){
 	}
    printf("\n");
 }
-
+int selectNumber(Product *s, int count){
+	int number;
+	listProduct(s,count); printf("번호는?(취소 :0)");
+      	scanf("%d",&number);
+	return number;
+}
 void saveData(Product *s,int count){
        	FILE *fp;
 	fp=fopen("product.txt","wt");

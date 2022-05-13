@@ -53,6 +53,14 @@ int deleteProduct(Product *s){
         s->price = -1;
         return 1;
 }
+void listProduct(Product *s, int count){
+	for(int i=0;i<count;i++){
+	if(s[i].price==-1 && s[i].method==-1) continue;
+       	printf("===============================================\n");
+	printf("%d번\n",i+1); readProduct(s[i]);
+	}
+   printf("\n");
+}
 
 void saveData(Product *s,int count){
        	FILE *fp;

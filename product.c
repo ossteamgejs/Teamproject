@@ -53,6 +53,29 @@ int deleteProduct(Product *s){
         s->price = -1;
         return 1;
 }
+int loadData(Product *s){
+    int i =0;
+    FILE *fp;
+    fp = fopen("product.txt", "rt");
+    if(fp == NULL){
+        fclose(fp);
+        printf("=> 파일 없음\n");
+        return 0;
+    }else {
+        for(; i < 20; i++){
+             fscanf(fp, "%s", s[i].name);
+             if(feof(fp)) break;
+             fscanf(fp, "%s", s[i].explain);
+             fscanf(fp, "%s", s[i].category);
+             fscanf(fp, "%s", s[i].date);
+             fscanf(fp, "%s", s[i].weight);
+             fscanf(fp, "%d", &s[i].price);
+        }
+        fclose(fp);
+        printf("=> 로딩 성공!\n");
+        return i;
+    }
+}
 void searchName(Product *s, int count){
 	int scnt=0;
 	char search[20];

@@ -71,36 +71,33 @@ int selectNumber(Product *s, int count){
 void saveData(Product *s,int count){
        	FILE *fp;
 	fp=fopen("product.txt","wt");
-       	for(int i=0;i<count;i++){
+       	for(int i=0;i<count-1;i++){
 	if(s[i].price==-1) continue;
 	fprintf(fp, "%s %s %s %s %s %d\n",s[i].name, s[i].explain, s[i].weight,
 	s[i].date,s[i].category,s[i].price);
    	 }
+	fprintf(fp, "%s %s %s %s %s %d\n",s[count-1].name, s[count-1].explain, s[count-1].weight,
+        s[count-1].date,s[count-1].category,s[count-1].price);
+         }
 fclose(fp);
 printf("저장됨!\n");
 }
 int loadData(Product *s){
-    int i =0;
-    FILE *fp;
-    fp = fopen("product.txt", "rt");
-    if(fp == NULL){
-        fclose(fp);
-        printf("=> 파일 없음\n");
-        return 0;
-    }else {
-        for(; i < 20; i++){
-             fscanf(fp, "%[^\n]s", s[i].name);
-             if(feof(fp)) break;
-             fscanf(fp, "%[^\n]s", s[i].explain);
-             fscanf(fp, "%[^\n]s", s[i].weight);
-             fscanf(fp, "%[^\n]s", s[i].date);
-             fscanf(fp, "%[^\n]s", s[i].category);
-             fscanf(fp, "%d", &s[i].price);
-        }
-        fclose(fp);
-        printf("=> 로딩 성공!\n");
-        return i;
-    }
+FILE *fp;
+   fp=fopen("product.txt","rt");
+   if(fp==NULL){
+printf("=>파일이 없음\n");
+return 0; }
+   int count=0;
+   for(;;count++){
+       const int max=100;
+       char line[max];
+       if(feof(fp)) break;
+       fgets(line,max,fp);
+       sscanf(line,"%[^,], %[^,], %[^,], %[^,] %[^,], %d",s[count].name,s[count].explain,s[count].weight,&s[count].date,& s[count].category,&s[count].price);   }
+   fclose(fp);
+printf("=>로딩 성공\n");
+return count;
 }
 
 void searchName(Product *s, int count){

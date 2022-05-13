@@ -17,6 +17,7 @@ int deleteProduct(Product *s);//제품삭제함수
 void saveData(Product *s, int count);
 int loadData(Product *s);
 int selectNumber(Product *s, int count);
+void listProduct(Product *s,int count);
 void searchName(Product *s, int count);
 void searchPrice(Product *s, int count);
 void searchWeight(Product *s, int count);

@@ -146,7 +146,7 @@ void searchWeight(Product *s, int count){
 
         for(int i=0; i <count; i++){
                 if(s[i].price == -1) continue;
-                if(search == s[i].weight){
+		if(strstr(s[i].weight,search)){
                         printf("===========================================\n");
                         printf("%d번\n",i+1);
                         readProduct(s[i]);

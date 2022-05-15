@@ -18,8 +18,8 @@ void saveData(Product *s, int count);
 int loadData(Product *s);
 int selectNumber(Product *s, int count);
 void listProduct(Product *s,int count);
-void searchName(Product *s, int count);
-void searchPrice(Product *s, int count);
+void searchName(Product *s, int count);//제품 이름을 검색하는 함수
+void searchPrice(Product *s, int count);//제품 가격을 검색하는 함수
 void searchWeight(Product *s, int count);
 void searchCategory(Product *s, int count);
 

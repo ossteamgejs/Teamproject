@@ -16,8 +16,8 @@ int updateProduct(Product *s);//제품수정함수
 int deleteProduct(Product *s);//제품삭제함수
 void saveData(Product *s, int count);//파일을 저장하는 함수
 int loadData(Product *s);//저장된 파일을 불러오는 함수
-int selectNumber(Product *s, int count);
-void listProduct(Product *s,int count);
+int selectNumber(Product *s, int count);//번호 선택 함수
+void listProduct(Product *s,int count);//제품 리스트 조회 함수
 void searchName(Product *s, int count);//제품 이름을 검색하는 함수
 void searchPrice(Product *s, int count);//제품 가격을 검색하는 함수
 void searchWeight(Product *s, int count);//제품 중량을 검색하는 함수

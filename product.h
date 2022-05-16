@@ -20,6 +20,6 @@ int selectNumber(Product *s, int count);
 void listProduct(Product *s,int count);
 void searchName(Product *s, int count);//제품 이름을 검색하는 함수
 void searchPrice(Product *s, int count);//제품 가격을 검색하는 함수
-void searchWeight(Product *s, int count);
-void searchCategory(Product *s, int count);
+void searchWeight(Product *s, int count);//제품 중량을 검색하는 함수
+void searchCategory(Product *s, int count);//제품 카테고리를 검색하는 함수
 
